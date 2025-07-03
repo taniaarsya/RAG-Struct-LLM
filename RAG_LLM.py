@@ -4,15 +4,15 @@ import pandas as pd
 import numpy as np
 import faiss
 from sentence_transformers import SentenceTransformer
-import openai
+from openai import OpenAI
 
 # ---------------------- CONFIG ----------------------
 st.set_page_config(page_title="AI Document Chat Assistant", layout="wide")
 st.markdown("""
     <div style='text-align: center;'>
-        <h1 style='color: #4A90E2;'>🧠 AI Document Chat Assistant</h1>
+        <h1 style='color: #4A90E2;'>🤖 AI Document Chat Assistant</h1>
         <p>Interact with your dataset in natural language — built on Retrieval-Augmented Generation (RAG)</p>
-<p style='font-size: 14px; color: gray;'>Built with Sentence-Transformers · FAISS · OpenAI GPT-4</p>
+        <p style='font-size: 14px; color: gray;'>Built with Sentence-Transformers · FAISS · OpenAI GPT-4 · Created by Tania</p>
     </div>
 """, unsafe_allow_html=True)
 
@@ -42,7 +42,7 @@ def retrieve(query, index, df, top_k=3):
     return result_df
 
 def generate_answer(query, context, api_key):
-    openai.api_key = api_key
+    client = OpenAI(api_key=api_key)
     system_msg = "You are an intelligent assistant that answers based on the provided product data."
     user_msg = f"""
     Question: {query}
@@ -50,8 +50,8 @@ def generate_answer(query, context, api_key):
     Relevant Data:
     {context}
     """
-    response = openai.ChatCompletion.create(
-        model="gpt-4.1-mini",
+    response = client.chat.completions.create(
+        model="gpt-4-1106-preview",
         messages=[
             {"role": "system", "content": system_msg},
             {"role": "user", "content": user_msg}
@@ -59,7 +59,7 @@ def generate_answer(query, context, api_key):
         temperature=0.5,
         max_tokens=1000
     )
-    return response.choices[0].message["content"]
+    return response.choices[0].message.content
 
 def prepare_text_column(df, selected_cols):
     df["text"] = df[selected_cols].astype(str).agg(" | ".join, axis=1)
