@@ -12,7 +12,7 @@ st.markdown("""
     <div style='text-align: center;'>
         <h1 style='color: #4A90E2;'>🤖 AI Document Chat Assistant</h1>
         <p>Interact with your dataset in natural language — built on Retrieval-Augmented Generation (RAG)</p>
-        <p style='font-size: 14px; color: gray;'>Built with Sentence-Transformers · FAISS · OpenAI GPT-4 · Created by Tania</p>
+        <p style='font-size: 14px; color: gray;'>Built with Sentence-Transformers · FAISS · OpenAI GPT-4 ·</p>
     </div>
 """, unsafe_allow_html=True)
 
