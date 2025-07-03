@@ -51,7 +51,7 @@ def generate_answer(query, context, api_key):
     {context}
     """
     response = openai.ChatCompletion.create(
-        model="gpt-4-1106-preview",
+        model="gpt-4.1-mini",
         messages=[
             {"role": "system", "content": system_msg},
             {"role": "user", "content": user_msg}
