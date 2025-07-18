@@ -5,7 +5,7 @@
 This portfolio presents two real-world use cases where I implemented **RAG-based AI solutions** to solve business problems in different domains:
 
 - 📦 **Product Insight Chatbot (E-Commerce)**  
-- 🧾 **Credit Risk Assistant Chatbot (Banking)**  
+- 🧾 **Credit Risk Assistant Chatbot (Banking/Fintech)**  
 
 Each project is built using **LLMs (GPT-4)**, **FAISS vector search**, **Sentence Embeddings**, and an interactive **Streamlit UI** to enable question-answering from internal datasets.
 
@@ -42,7 +42,7 @@ By integrating both, the model avoids hallucination and ensures accurate, ground
 
 ---
 
-## 🧾 Use Case 2: Credit Risk Assistant Chatbot (Banking)
+## 🧾 Use Case 2: Credit Risk Assistant Chatbot (Banking/Fintech)
 
 **Business Question Examples:**
 - “What does a high-risk customer profile usually look like?”
