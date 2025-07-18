@@ -92,3 +92,9 @@ Ensure you have an OpenAI API key set as an environment variable:
 These tools help teams interact with complex business data using natural language, making insights more accessible without needing SQL, dashboards, or technical skills.
 They showcase the potential of combining LLMs with internal business intelligence in real-world, secure, and explainable ways.
 
+---
+
+### 👩🏻‍💻 About Me
+- 🔗 [LinkedIn](https://www.linkedin.com/in/taniaarsya/)  
+- 📫 Email: taniaarsyaa@gmail.com  
+
